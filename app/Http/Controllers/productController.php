@@ -20,7 +20,7 @@ class productController extends Controller
     {
          // get all the products
          $products = product::all();
-
+        
          // load the view and pass the products
          return View::make('products.index')
              ->with('products', $products);
