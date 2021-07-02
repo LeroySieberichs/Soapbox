@@ -63,7 +63,12 @@ class productController extends Controller
             $product->name = Request::get('name');
             $product->quantity_in_stock = Request::get('quantity_in_stock');
             $product->price = Request::get('price');
-            $product->total = Request::get('total');
+            if(Request::get('total') != (Request::get('price') * Request::get('quantity_in_stock'))){
+                $product->total = Request::get('price') * Request::get('quantity_in_stock');
+            } else {
+                $product->total = Request::get('total');
+            }
+            //$product->total = Request::get('total');
             $product->save();
 
             // redirect
