@@ -1,8 +1,7 @@
-div.image {
-    background: url("/images/Achtergrond.png");
-    background-repeat: no-repeat;
-    background-size: auto;
-    
+.image {
+    position: relative;
+    height:100%;
+    width:100%;
  }
 
 ​table > thead >tr, td{
@@ -31,4 +30,14 @@ table > tbody >tr >td{
 .required-field{
     font-style: italic;
     color: #279ac3;
+    font-weight: bold;
+}
+.image1{
+    width:60%;
+    position: absolute;
+  top: 1%;
+  left: 20%;
+}
+hr{
+    border: 1px solid #279ac3
 }

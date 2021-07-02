@@ -72,10 +72,10 @@
             </table>
 
             </div>
-        <div class="col image">
-    </div>
-    
-  </div>
+        <div class="col">
+        <img class="image" src="/images/Achtergrond.png" />
+        <img class="image1" src="/images/TU Delft Impact Contest Wit.png" />
+        </div>
 
 </div>
 </body>
