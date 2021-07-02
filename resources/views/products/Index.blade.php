@@ -3,11 +3,15 @@
 <head>
     <title>TUDelft</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+    <?php include '..\resources\css\app.css'; ?>
+    </style>
 </head>
 <body>
-<div class="container">
-
-<h1>Registration form</h1>
+<div class="container-fluid">
+<div class="row">
+    <div class="col">
+    <h1>Registration form</h1>
 <h1>to submit your product</h1>
 
 <!-- if there are creation errors, they will show here -->
@@ -57,12 +61,18 @@
 
             <td>{{ $value->name }}</td>
             <td>{{ $value->quantity_in_stock }}</td>
-            <td>{{ $value->price }}</td>
+            <td>€{{ $value->price }}</td>
             <td>€{{ $value->total }}</td>
         </tr>
     @endforeach
     </tbody>
 </table>
+
+    </div>
+    <div class="col image">
+    </div>
+    
+  </div>
 
 </div>
 </body>

@@ -1,0 +1,9 @@
+div.image {
+    background: url("/images/Achtergrond.png");
+    background-repeat: no-repeat;
+    
+ }
+ body{
+     height: 100%;
+     width: 100%;
+ }​
