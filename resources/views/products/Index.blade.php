@@ -57,7 +57,7 @@
 
             <td>{{ $value->name }}</td>
             <td>{{ $value->quantity_in_stock }}</td>
-            <td>€{{ $value->price }}</td>
+            <td>{{ $value->price }}</td>
             <td>€{{ $value->total }}</td>
         </tr>
     @endforeach
