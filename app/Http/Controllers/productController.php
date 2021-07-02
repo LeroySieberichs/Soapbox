@@ -47,23 +47,22 @@ class productController extends Controller
         $rules = array(
             'name'       => 'required',
             'quantity_in_stock'      => 'required|numeric',
-            'price' => 'required|numeric',
+            'price' => 'required|regex:/^\d{1,13}(\.\d{1,4})?$/',
             'total' => 'numeric',
         );
         $validator = Validator::make(Request::all(), $rules);
 
         // process the login
         if ($validator->fails()) {
-            return Redirect::to('products/index')
-                ->withErrors($validator)
-                ->withInput(Request::except('password'));
+            return Redirect::to('products')
+                ->withErrors($validator);
         } else {
             // store
             $product = new product;
             $product->name = Request::get('name');
             $product->quantity_in_stock = Request::get('quantity_in_stock');
             $product->price = Request::get('price');
-            if(Request::get('total') != (Request::get('price') * Request::get('quantity_in_stock'))){
+            if(Request::get('total') != (Request::get('price') * Request::get('quantity_in_stock')) || Request::get('total') == null ){
                 $product->total = Request::get('price') * Request::get('quantity_in_stock');
             } else {
                 $product->total = Request::get('total');

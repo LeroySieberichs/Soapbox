@@ -29,12 +29,12 @@
 
             <div class="form-group">
                 {{ Form::label('price', 'Price*') }}
-                {{ Form::number('price', Request ::old('price'), array('class' => 'form-control')) }}
+                {{ Form::number('price', Request ::old('price'), array('class' => 'form-control','step'=>'any')) }}
             </div>
 
             <div class="form-group">
                 {{ Form::label('total', 'Total') }}
-                {{ Form::number('total', Request ::old('total'), array('class' => 'form-control')) }}
+                {{ Form::number('total', Request ::old('total'), array('class' => 'form-control', 'step' => 'any' )) }}
             </div>
             <p class="required-field">*required field</p>
             <div class="d-flex justify-content-center">{{ Form::submit('Submit', array('class' => 'btn btn-primary btn-lg btn-block')) }}</div>
@@ -64,9 +64,9 @@
 
                         <td bgcolor="c9e6f0">{{ $value->name }}</td>
                         <td>{{ $value->quantity_in_stock }}</td>
-                        <td >€{{ $value->price }}</td>
-                        <td >€{{ $value->total }}</td>
-                    </tr>
+                        <td >€{{number_format($value->price , 2) }}</td>
+                        <td >€{{number_format($value->total , 2) }}</td>
+                        <!--<td >{{ floatval(number_format($value->price , 2)) }}</td> -->
                 @endforeach
                 </tbody>
             </table>

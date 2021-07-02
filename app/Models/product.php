@@ -12,7 +12,7 @@ class Product extends Model
      * @var array
      */
     protected $casts = [
-        'price' => 'float',
-        'total' => 'float',
+        'price' => 'double',
+        'total' => 'double',
     ];
 }
