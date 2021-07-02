@@ -1,7 +1,8 @@
 .image {
     position: relative;
-    height:100%;
-    width:100%;
+    height:auto;
+    width: 100%;
+    max-width: 100%;
  }
 
 ​table > thead >tr, td{
@@ -9,11 +10,17 @@
     font-weight: bold;
     
     
+    
 }
 table > tbody >tr >td{
     color: #279ac3;
     font-weight: normal;
     
+    
+}
+
+table.table-bordered > tbody > tr > td{
+    border:1px solid #279ac3;
 }
 .h1title{
     font-weight: bold;
