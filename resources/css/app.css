@@ -1,9 +1,34 @@
 div.image {
     background: url("/images/Achtergrond.png");
     background-repeat: no-repeat;
+    background-size: auto;
     
  }
- body{
-     height: 100%;
-     width: 100%;
- }​
+
+​table > thead >tr, td{
+    color: white;
+    font-weight: bold;
+    
+    
+}
+table > tbody >tr >td{
+    color: #279ac3;
+    font-weight: normal;
+    
+}
+.h1title{
+    font-weight: bold;
+    color: #279ac3;
+}
+.h1subtitle{
+    font-style: italic;
+    color: #279ac3;
+    font-weight: normal;
+}
+.form-group{
+    color: #279ac3;
+}
+.required-field{
+    font-style: italic;
+    color: #279ac3;
+}

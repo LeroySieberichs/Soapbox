@@ -8,68 +8,71 @@
     </style>
 </head>
 <body>
-<div class="container-fluid">
-<div class="row">
-    <div class="col">
-    <h1>Registration form</h1>
-<h1>to submit your product</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col ">
+            <h1 class="h1title">Registration form</h1>
+            <h1 class="h1subtitle">to submit your product</h1>
 
-<!-- if there are creation errors, they will show here -->
-{{ Html::ul($errors->all()) }}
-{{ Form::open(array('url' => 'products')) }}
-    <div class="form-group">
-        {{ Form::label('name', 'Product name*') }}
-        {{ Form::text('name', Request ::old('name'), array('class' => 'form-control')) }}
-    </div>
+            <!-- if there are creation errors, they will show here -->
+            {{ Html::ul($errors->all()) }}
+            {{ Form::open(array('url' => 'products')) }}
+            <div class="form-group">
+                {{ Form::label('name', 'Product name*') }}
+                {{ Form::text('name', Request ::old('name'), array('class' => 'form-control')) }}
+            </div>
 
-    <div class="form-group">
-        {{ Form::label('quantity_in_stock', 'Quantity in stock*') }}
-        {{ Form::number('quantity_in_stock', Request ::old('quantity_in_stock'), array('class' => 'form-control')) }}
-    </div>
+            <div class="form-group">
+                {{ Form::label('quantity_in_stock', 'Quantity in stock*') }}
+                {{ Form::number('quantity_in_stock', Request ::old('quantity_in_stock'), array('class' => 'form-control')) }}
+            </div>
 
-    <div class="form-group">
-        {{ Form::label('price', 'Price*') }}
-        {{ Form::number('price', Request ::old('price'), array('class' => 'form-control')) }}
-    </div>
+            <div class="form-group">
+                {{ Form::label('price', 'Price*') }}
+                {{ Form::number('price', Request ::old('price'), array('class' => 'form-control')) }}
+            </div>
 
-    <div class="form-group">
-        {{ Form::label('total', 'Total') }}
-        {{ Form::number('total', Request ::old('total'), array('class' => 'form-control')) }}
-    </div>
-    <div class="d-flex justify-content-center">{{ Form::submit('Submit', array('class' => 'btn btn-primary')) }}</div>
-    
+            <div class="form-group">
+                {{ Form::label('total', 'Total') }}
+                {{ Form::number('total', Request ::old('total'), array('class' => 'form-control')) }}
+            </div>
+            <p class="required-field">*required field</p>
+            <div class="d-flex justify-content-center">{{ Form::submit('Submit', array('class' => 'btn btn-primary')) }}</div>
+            
 
-{{ Form::close() }}
+            {{ Form::close() }}
 
-<!-- will be used to show any messages -->
-@if (Session::has('message'))
-    <div class="alert alert-info">{{ Session::get('message') }}</div>
-@endif
+            <!-- will be used to show any messages -->
+            @if (Session::has('message'))
+            <div class="alert alert-info">{{ Session::get('message') }}</div>
+            @endif
+            <hr>
+            <hr>
+            <hr>
+            <table class="table table-bordered">
+                <thead>
+                    <tr bgcolor="279ac3">
+                        <td >Productname</td>
+                        <td >Quantity in stock</td>
+                        <td >Price</td>
+                        <td >Total</td>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach($products as $key => $value)
+                    <tr>
 
-<table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <td>Productname</td>
-            <td>Quantity in stock</td>
-            <td>Price</td>
-            <td>Total</td>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach($products as $key => $value)
-        <tr>
+                        <td bgcolor="c9e6f0">{{ $value->name }}</td>
+                        <td>{{ $value->quantity_in_stock }}</td>
+                        <td >€{{ $value->price }}</td>
+                        <td >€{{ $value->total }}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
 
-            <td>{{ $value->name }}</td>
-            <td>{{ $value->quantity_in_stock }}</td>
-            <td>€{{ $value->price }}</td>
-            <td>€{{ $value->total }}</td>
-        </tr>
-    @endforeach
-    </tbody>
-</table>
-
-    </div>
-    <div class="col image">
+            </div>
+        <div class="col image">
     </div>
     
   </div>
