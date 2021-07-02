@@ -20,7 +20,7 @@ class productController extends Controller
     {
          // get all the products
          $products = product::all();
-        
+
          // load the view and pass the products
          return View::make('products.index')
              ->with('products', $products);
@@ -52,12 +52,10 @@ class productController extends Controller
         );
         $validator = Validator::make(Request::all(), $rules);
 
-        // process the login
         if ($validator->fails()) {
             return Redirect::to('products')
                 ->withErrors($validator);
         } else {
-            // store
             $product = new product;
             $product->name = Request::get('name');
             $product->quantity_in_stock = Request::get('quantity_in_stock');
@@ -67,7 +65,6 @@ class productController extends Controller
             } else {
                 $product->total = Request::get('total');
             }
-            //$product->total = Request::get('total');
             $product->save();
 
             // redirect
