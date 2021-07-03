@@ -17,8 +17,8 @@ Een kleine PHP(laravel) opdracht voor het tweede solicitatie gesprek met SoapBox
 Install my-project with npm
 
 ```bash 
-  npm install my-project
-  cd my-project
+  npm install Soapbox
+  cd Soapbox
 ```
     
 ## License
