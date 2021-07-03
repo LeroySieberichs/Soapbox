@@ -10,7 +10,7 @@ Een kleine PHP(laravel) opdracht voor het tweede solicitatie gesprek met SoapBox
 
 ## Demo
 
- ![Application Demo](https://i.imgur.com/zmaTfMO.gif)
+ ![Application Demo](https://i.imgur.com/3hKnkUr.gif)
  
 ## Installation 
 
