@@ -8,7 +8,10 @@ Een kleine PHP(laravel) opdracht voor het tweede solicitatie gesprek met SoapBox
 
 - [@LeroySieberichs](https://github.com/LeroySieberichs)
 
-  
+## Demo
+
+ ![Application Demo](https://i.imgur.com/zmaTfMO.gif)
+ 
 ## Installation 
 
 Install my-project with npm
