@@ -66,7 +66,6 @@
                         <td>{{ $value->quantity_in_stock }}</td>
                         <td >€{{number_format($value->price , 2) }}</td>
                         <td >€{{number_format($value->total , 2) }}</td>
-                        <!--<td >{{ floatval(number_format($value->price , 2)) }}</td> -->
                 @endforeach
                 </tbody>
             </table>

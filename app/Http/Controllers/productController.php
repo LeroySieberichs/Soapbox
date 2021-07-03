@@ -44,6 +44,7 @@ class productController extends Controller
      */
     public function store(Request $request)
     {
+        // validation rules creation
         $rules = array(
             'name'       => 'required',
             'quantity_in_stock'      => 'required|numeric',
@@ -60,6 +61,8 @@ class productController extends Controller
             $product->name = Request::get('name');
             $product->quantity_in_stock = Request::get('quantity_in_stock');
             $product->price = Request::get('price');
+
+            // checks if the "total" input from the user is the multiplication of the price and quantity
             if(Request::get('total') != (Request::get('price') * Request::get('quantity_in_stock')) || Request::get('total') == null ){
                 $product->total = Request::get('price') * Request::get('quantity_in_stock');
             } else {
@@ -67,7 +70,7 @@ class productController extends Controller
             }
             $product->save();
 
-            // redirect
+            
             Session::flash('message', 'Product Created!');
             return Redirect::to('products');
         }
