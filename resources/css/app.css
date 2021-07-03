@@ -48,3 +48,6 @@ table.table-bordered > tbody > tr > td{
 hr{
     border: 1px solid #279ac3
 }
+html {
+    overflow: scroll;
+  }
