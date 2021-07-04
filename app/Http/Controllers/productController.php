@@ -18,12 +18,17 @@ class productController extends Controller
      */
     public function index()
     {
-         // get all the products
-         $products = product::all();
+        try{
+            // get all the products
+            $products = product::all();
 
-         // load the view and pass the products
-         return View::make('products.index')
-             ->with('products', $products);
+            // load the view and pass the products
+            return View::make('products.index')
+                ->with('products', $products);
+        } catch(\Illuminate\Database\QueryException $ex){ 
+
+            return View::make('products.index')->withErrors($ex->getMessage());
+        }   
     }
 
     /**
@@ -49,7 +54,6 @@ class productController extends Controller
             'name'       => 'required',
             'quantity_in_stock'      => 'required|numeric',
             'price' => 'required|regex:/^\d{1,13}(\.\d{1,4})?$/',
-            'total' => 'numeric',
         );
         $validator = Validator::make(Request::all(), $rules);
 

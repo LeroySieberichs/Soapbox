@@ -59,6 +59,8 @@
                     </tr>
                 </thead>
                 <tbody>
+                @if($errors->any())
+                @else
                 @foreach($products as $key => $value)
                     <tr>
 
@@ -67,6 +69,7 @@
                         <td >€{{number_format($value->price , 2) }}</td>
                         <td >€{{number_format($value->total , 2) }}</td>
                 @endforeach
+                @endif
                 </tbody>
             </table>
 
