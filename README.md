@@ -12,13 +12,30 @@ Een kleine PHP(laravel) opdracht voor het tweede solicitatie gesprek met SoapBox
 
  ![Application Demo](https://i.imgur.com/3hKnkUr.gif)
  
-## Installation 
+## Run Locally
 
-Install my-project with npm
+Clone the project
 
-```bash 
-  npm install Soapbox
+```bash
+  git clone https://github.com/LeroySieberichs/Soapbox/
+```
+
+Go to the project directory
+
+```bash
   cd Soapbox
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
 ```
     
 ## License
