@@ -37,7 +37,7 @@
                 {{ Form::number('total', Request ::old('total'), array('class' => 'form-control', 'step' => 'any' )) }}
             </div>
             <p class="required-field">*required field</p>
-            <div class="d-flex justify-content-center">{{ Form::submit('Submit', array('class' => 'btn btn-primary btn-lg btn-block')) }}</div>
+            {{ Form::submit('Submit', array('class' => 'btn btn-primary btn-lg btn-block d-flex justify-content-center')) }}
             
 
             {{ Form::close() }}

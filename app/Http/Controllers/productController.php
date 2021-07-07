@@ -61,7 +61,10 @@ class productController extends Controller
             return Redirect::to('products')
                 ->withErrors($validator);
         } else {
-            $product = new product;
+
+            try{
+
+                $product = new product;
             $product->name = Request::get('name');
             $product->quantity_in_stock = Request::get('quantity_in_stock');
             $product->price = Request::get('price');
@@ -77,6 +80,13 @@ class productController extends Controller
             
             Session::flash('message', 'Product Created!');
             return Redirect::to('products');
+
+            } catch(\Illuminate\Database\QueryException $ex){ 
+
+                return View::make('products.index')->withErrors("Input field value is too high");
+            }   
+
+            
         }
     }
 
